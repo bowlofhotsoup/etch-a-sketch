@@ -15,7 +15,18 @@ inputBtn.addEventListener('click', function(){
         cell.innerText = (c + 1);
         container.appendChild(cell).className = "grid-item";
         function func(){
-            cell.setAttribute('style', 'background-color: blue;');
+            cell.style.backgroundColor = 'black';
+            cell.style.opacity = (parseFloat(cell.style.opacity) || 0) + 0.1;
+            /*USE BELOW FOR RANDOM RGB:
+            const randomColor = () => {
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                return 'rgb(' + r + ',' + g + ',' + b + ')';
+            }
+            console.log(randomColor());
+            cell.style.backgroundColor = randomColor();
+            */
         }
         cell.addEventListener('mouseover', func, false);
         inputBtn.style.display = 'none';
